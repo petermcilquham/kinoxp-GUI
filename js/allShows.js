@@ -19,7 +19,7 @@ function gotData(data){
 
 function addRow(data) {
   const table = document.getElementById("showsDataTable");
-  let rowCount = data.showID;
+  let rowCount = table.rows.length;
   let row = table.insertRow(rowCount);
 
   let cell1 = row.insertCell(0);
@@ -45,4 +45,7 @@ function addRow(data) {
 
   let cell8 = row.insertCell(7);
   cell8.innerHTML = data.movieImg;
+
+  let cell9 = row.insertCell(8);
+  cell9.innerHTML = data.showId;
 }
