@@ -1,0 +1,48 @@
+const url = "http://localhost:8080/show/all";
+
+const requestOption = {
+  headers: {
+    "Content-type": 'application/json'
+  },
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch(url, requestOption)
+  .then(response => response.json())
+  .then(data => gotData(data));
+
+function gotData(data){
+  console.log(data);
+  data.forEach(addRow);
+}
+
+function addRow(data) {
+  const table = document.getElementById("showsDataTable");
+  let rowCount = data.showID;
+  let row = table.insertRow(rowCount);
+
+  let cell1 = row.insertCell(0);
+  cell1.innerHTML = data.movieTitle;
+
+  let cell2 = row.insertCell(1);
+  cell2.innerHTML = data.cinemaHall;
+
+  let cell3 = row.insertCell(2);
+  cell3.innerHTML = data.startTime;
+
+  let cell4 = row.insertCell(3);
+  cell4.innerHTML = data.duration;
+
+  let cell5 = row.insertCell(4);
+  cell5.innerHTML = data.genre;
+
+  let cell6 = row.insertCell(5);
+  cell6.innerHTML = data.ageReq;
+
+  let cell7 = row.insertCell(6);
+  cell7.innerHTML = data.stars;
+
+  let cell8 = row.insertCell(7);
+  cell8.innerHTML = data.movieImg;
+}

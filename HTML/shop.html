@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
-
 <body>
+
+<!-- nav bar / banner -->
 <div class="container-fluid banner">
   <div class="row">
     <div class="col-3"></div>
@@ -23,51 +24,12 @@
   </div>
 </div>
 
+<!-- produkter tabel -->
 <div class="container-fluid">
-  <div class="row row-margin" th:each="product : ${products}">
-    <div class="col-2"><ul>
-      <li th:text="${product.productName}">produkt 1</li>
-      <li th:text="${product.price}">produkt pris</li>
-      <li th:text="${product.productImg}">produkt billede</li>
-    </ul></div>
-    <div class="col-2"><ul>
-      <li th:text="${product.productName}">produkt 2</li>
-      <li th:text="${product.price}">produkt pris</li>
-      <li th:text="${product.productImg}">produkt billede</li>
-    </ul></div>
-    <div class="col-2"><ul>
-      <li th:text="${product.productName}">produkt 3</li>
-      <li th:text="${product.price}">produkt pris</li>
-      <li th:text="${product.productImg}">produkt billede</li>
-    </ul></div>
-    <div class="col-2"><ul>
-      <li th:text="${product.productName}">produkt 4</li>
-      <li th:text="${product.price}">produkt pris</li>
-      <li th:text="${product.productImg}">produkt billede</li>
-    </ul></div><div class="col-2"><ul>
-    <li th:text="${product.productName}">produkt 5</li>
-    <li th:text="${product.price}">produkt pris</li>
-    <li th:text="${product.productImg}">produkt billede</li>
-  </ul></div><div class="col-2"><ul>
-    <li th:text="${product.productName}">produkt 6</li>
-    <li th:text="${product.price}">produkt pris</li>
-    <li th:text="${product.productImg}">produkt billede</li>
-  </ul></div>
-  </div>
+  <table class="table" id="productsDataTable">
+  </table>
 </div>
 
-
-<h1>Tabel</h1>
-<table id="dataTable">
-  <tr>
-    <th style="text-align: left">ID</th>
-    <th style="text-align: left">Product Navn</th>
-    <th style="text-align: left">Pris</th>
-    <th style="text-align: left">Billede</th>
-  </tr>
-</table>
-
-
-<script src="../js/shop.js"></script>
+<script src="../js/allProducts.js"></script>
 </body>
 </html>

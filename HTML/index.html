@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
-
 <body>
+
+<!-- nav bar / banner -->
 <div class="container-fluid banner">
   <div class="row">
     <div class="col-3"></div>
@@ -23,44 +24,28 @@
   </div>
 </div>
 
+<!-- movies overskrift-->
 <div class="container-fluid">
   <div class="row">
     <div class="col"><h1 style="text-align: center">MOVIES</h1></div>
   </div>
 </div>
 
+<!-- movies tabel -->
 <div class="container-fluid">
-  <div class="row row-margin">
-    <div class="col-2">film 1</div>
-    <div class="col-2">film 2</div>
-    <div class="col-2">film 3</div>
-    <div class="col-2">film 4</div>
-    <div class="col-2">film 5</div>
-    <div class="col-2">film 6</div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row row-margin">
-    <div class="col-2">film 1</div>
-    <div class="col-2">film 2</div>
-    <div class="col-2">film 3</div>
-    <div class="col-2">film 4</div>
-    <div class="col-2">film 5</div>
-    <div class="col-2">film 6</div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row row-margin">
-    <div class="col-2">film 1</div>
-    <div class="col-2">film 2</div>
-    <div class="col-2">film 3</div>
-    <div class="col-2">film 4</div>
-    <div class="col-2">film 5</div>
-    <div class="col-2">film 6</div>
-  </div>
+  <table class="table" id="showsDataTable">
+    <tr>
+      <th>Titel</th>
+      <th>Sal nr.</th>
+      <th>start tid</th>
+      <th>længde</th>
+      <th>genre</th>
+      <th>min alder</th>
+      <th>medvirkende</th>
+    </tr>
+  </table>
 </div>
 
-
-<script src="../js/show.js"></script>
+<script src="../js/allShows.js"></script>
 </body>
 </html>
