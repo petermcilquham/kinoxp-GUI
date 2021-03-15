@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy this, buy that, buy everything!</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+
+  <link href="../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+<div class="container-fluid banner">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-2"><a href="index.html">Home</a></div>
+    <div class="col-2"><a href="shop.html">Shop</a></div>
+    <div class="col-2"><a href="admin-login.html">Admin</a></div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row row-margin" th:each="product : ${products}">
+    <div class="col-2"><ul>
+      <li th:text="${product.productName}">produkt 1</li>
+      <li th:text="${product.price}">produkt pris</li>
+      <li th:text="${product.productImg}">produkt billede</li>
+    </ul></div>
+    <div class="col-2"><ul>
+      <li th:text="${product.productName}">produkt 2</li>
+      <li th:text="${product.price}">produkt pris</li>
+      <li th:text="${product.productImg}">produkt billede</li>
+    </ul></div>
+    <div class="col-2"><ul>
+      <li th:text="${product.productName}">produkt 3</li>
+      <li th:text="${product.price}">produkt pris</li>
+      <li th:text="${product.productImg}">produkt billede</li>
+    </ul></div>
+    <div class="col-2"><ul>
+      <li th:text="${product.productName}">produkt 4</li>
+      <li th:text="${product.price}">produkt pris</li>
+      <li th:text="${product.productImg}">produkt billede</li>
+    </ul></div><div class="col-2"><ul>
+    <li th:text="${product.productName}">produkt 5</li>
+    <li th:text="${product.price}">produkt pris</li>
+    <li th:text="${product.productImg}">produkt billede</li>
+  </ul></div><div class="col-2"><ul>
+    <li th:text="${product.productName}">produkt 6</li>
+    <li th:text="${product.price}">produkt pris</li>
+    <li th:text="${product.productImg}">produkt billede</li>
+  </ul></div>
+  </div>
+</div>
+
+</body>
+</html>
