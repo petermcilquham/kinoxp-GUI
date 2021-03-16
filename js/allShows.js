@@ -13,7 +13,6 @@ fetch(url, requestOption)
   .then(data => gotData(data));
 
 function gotData(data){
-  console.log(data);
   data.forEach(addRow);
 }
 
@@ -29,23 +28,26 @@ function addRow(data) {
   cell2.innerHTML = data.cinemaHall;
 
   let cell3 = row.insertCell(2);
-  cell3.innerHTML = data.startTime;
+  cell3.innerHTML = data.date;
 
   let cell4 = row.insertCell(3);
-  cell4.innerHTML = data.duration;
+  cell4.innerHTML = data.startTime;
 
   let cell5 = row.insertCell(4);
-  cell5.innerHTML = data.genre;
+  cell5.innerHTML = data.duration;
 
   let cell6 = row.insertCell(5);
-  cell6.innerHTML = data.ageReq;
+  cell6.innerHTML = data.genre;
 
   let cell7 = row.insertCell(6);
-  cell7.innerHTML = data.stars;
+  cell7.innerHTML = data.ageReq;
 
   let cell8 = row.insertCell(7);
-  cell8.innerHTML = data.movieImg;
+  cell8.innerHTML = data.stars;
 
   let cell9 = row.insertCell(8);
-  cell9.innerHTML = data.showId;
+  cell9.innerHTML = data.movieImg;
+
+  let cell10 = row.insertCell(9);
+  cell10.innerHTML = data.showId;
 }
