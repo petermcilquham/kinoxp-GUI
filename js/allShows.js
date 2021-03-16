@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/show/all";
+const url = "http://localhost:8080/shows/all";
 
 const requestOption = {
   headers: {
