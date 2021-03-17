@@ -13,8 +13,8 @@ findShowBtn.addEventListener("click", fetchFunc);
 findShowBtn.addEventListener("click", clearTable);
 
 function fetchFunc(){
+  console.log("hej")
   let url = `http://localhost:8080/showtitle/${input.value}`;
-
   fetch(url, requestOption)
     .then(response => response.json())
     .then(data => gotData(data));
