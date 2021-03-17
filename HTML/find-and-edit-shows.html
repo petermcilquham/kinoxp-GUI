@@ -37,12 +37,12 @@
 
   <div class="form-group">
     <label for="startTime">Start tidspunkt</label>
-    <input type="time" class="form-control" id="startTime" name="startTime">
+    <input type="time" step="1" class="form-control" id="startTime" name="startTime">
   </div>
 
   <div class="form-group">
     <label for="duration">Film længde</label>
-    <input type="time" class="form-control" id="duration" name="duration">
+    <input type="time" step="1" class="form-control" id="duration" name="duration">
   </div>
 
   <div class="form-group">
@@ -73,7 +73,7 @@
 <div class="container">
   <div class="form-group">
     <label for="show">Søg efter show ved ID</label>
-    <input type="number" class="form-control" id="show" name="show" required>
+    <input type="text" class="form-control" id="show" name="show" required>
   </div>
 
   <button type="submit" class="btn btn-primary findShowButton">Find show</button>
@@ -81,7 +81,7 @@
 </div>
 
 <div class="container-fluid">
-  <table class="table" id="showsDataTable">
+  <table class="table" id="showDataTable">
     <tr>
       <th>Titel</th>
       <th>Sal nr.</th>

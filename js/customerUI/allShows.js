@@ -13,12 +13,11 @@ fetch(url, requestOption)
   .then(data => gotData(data));
 
 function gotData(data){
-  console.log(data);
   data.forEach(addRow);
 }
 
 function addRow(data) {
-  const table = document.getElementById("showsDataTable");
+  const table = document.querySelector(".showsDataTable");
   let rowCount = table.rows.length;
   let row = table.insertRow(rowCount);
 

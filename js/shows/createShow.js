@@ -23,8 +23,6 @@ createShowBtn.onclick = function(){
 }
 
 function postFunction(inputValue){
-  console.log(inputValue);
-
   const url = "http://localhost:8080/shows/create";
 
   let requestBody = JSON.stringify(inputValue);
