@@ -16,11 +16,35 @@
 <div class="container">
     <div class="form-group">
       <label for="booking">Indtast kunde telefon nummer</label>
-      <input type="number" class="form-control" id="booking" name="booking" required>
+      <input type="text" class="form-control" id="booking" name="booking" required>
+      <button type="submit" class="btn btn-primary findBookingButton">Find booking</button>
+      <br><br>
+
+      <div class="container-fluid">
+        <table class="table" id="createBookingTable1">
+          <tr>
+            <th>BookingID</th>
+            <th>Navn</th>
+            <th>Tlf. Nummer</th>
+            <th>showID</th>
+            <th>Sal nr.</th>
+            <th>Sæde 1.</th>
+            <th>Sæde 2.</th>
+            <th>Sæde 3.</th>
+            <th>Sæde 4.</th>
+            <th>Sæde 5.</th>
+          </tr>
+        </table>
+
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Find booking</button>
-  <!--    todo:-->
-  <p>retur felt? noget der viser den booking man har fundet</p>
+    <div class="form-group">
+      <label for="printBooking">Vælg booking id</label>
+      <input type="text" class="form-control" id="printBooking" name="printBooking" required>
+      <button type="button" class="btn btn-primary printBookingButton">Udskriv Billetter</button>
+      <br><br>
+    </div>
+
 </div>
 
 <div class="container">
@@ -78,6 +102,8 @@
 
   <button type="submit" class="btn btn-primary">Edit</button>
 </div>
+
+<script src="../js/bookings/findBooking.js"></script>
 
 <!--todo:-->
 <!--se booking-->
