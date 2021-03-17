@@ -32,7 +32,8 @@ function addRow(data) {
   cell1.innerHTML = data.movieTitle;
 
   let cell2 = row.insertCell(1);
-  cell2.innerHTML = data.date;
+  let date = new Date(data.date);
+  cell2.innerHTML = date.toISOString().slice(0, 10);
 
   let cell3 = row.insertCell(2);
   cell3.innerHTML = data.startTime;

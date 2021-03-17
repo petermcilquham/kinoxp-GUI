@@ -29,9 +29,8 @@ function addRow(data) {
   cell2.innerHTML = data.cinemaHall;
 
   let cell3 = row.insertCell(2);
-  var date = new Date(data.date);
-  var dateFormatted = date.toISOString().slice(0,10);
-  cell3.innerHTML = dateFormatted;
+  let date = new Date(data.date);
+  cell3.innerHTML = date.toISOString().slice(0, 10);
 
   let cell4 = row.insertCell(3);
   cell4.innerHTML = data.startTime;
@@ -53,8 +52,4 @@ function addRow(data) {
 
   let cell10 = row.insertCell(9);
   cell10.innerHTML = data.showId;
-}
-
-function parseDate(){
-  return parsedDate;
 }
