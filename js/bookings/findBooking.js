@@ -75,13 +75,13 @@ function fetchBookingId(){
   let url = `http://localhost:8080/booking/print/${bookingId.value}`;
   fetch(url, requestOption)
     .then(response => response.json())
-    .then(data1 => printBooking(data1));
+    .then(data1 => printBooking(data1))
 }
 
 function printBooking(data1) {
   alert("***Printer billetter til***\n"
     + data1.customerName
-    + "\nshowid: " + data1.showId
+    + "\nMovieId: " + data1.showId
     + "\nSal: " + data1.cinemaHallId
     + "\nSæde: " + data1.seatNum01
     + "\nSæde: " + data1.seatNum02
