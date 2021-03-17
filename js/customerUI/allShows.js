@@ -29,7 +29,9 @@ function addRow(data) {
   cell2.innerHTML = data.cinemaHall;
 
   let cell3 = row.insertCell(2);
-  cell3.innerHTML = data.date;
+  var date = new Date(data.date);
+  var dateFormatted = date.toISOString().slice(0,10);
+  cell3.innerHTML = dateFormatted;
 
   let cell4 = row.insertCell(3);
   cell4.innerHTML = data.startTime;
