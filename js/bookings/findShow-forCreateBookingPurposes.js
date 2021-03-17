@@ -8,9 +8,9 @@ const requestOption = {
 
 const table = document.getElementById("createBookingTable");
 const input = document.getElementById("title");
-const btn = document.querySelector(".findShowTitleButton");
-btn.addEventListener("click", fetchFunc);
-btn.addEventListener("click", clearTable);
+const findShowBtn = document.querySelector(".findShowTitleButton");
+findShowBtn.addEventListener("click", fetchFunc);
+findShowBtn.addEventListener("click", clearTable);
 
 function fetchFunc(){
   let url = `http://localhost:8080/showtitle/${input.value}`;
@@ -32,19 +32,19 @@ function addRow(data) {
   cell1.innerHTML = data.movieTitle;
 
   let cell2 = row.insertCell(1);
-  cell2.innerHTML = data.cinemaHall;
+  cell2.innerHTML = data.date;
 
   let cell3 = row.insertCell(2);
-  cell3.innerHTML = data.date;
+  cell3.innerHTML = data.startTime;
 
   let cell4 = row.insertCell(3);
-  cell4.innerHTML = data.startTime;
+  cell4.innerHTML = data.ageReq;
 
   let cell5 = row.insertCell(4);
-  cell5.innerHTML = data.ageReq;
+  cell5.innerHTML = data.showId;
 
   let cell6 = row.insertCell(5);
-  cell6.innerHTML = data.showId;
+  cell6.innerHTML = data.cinemaHall;
 }
 
 function clearTable() {

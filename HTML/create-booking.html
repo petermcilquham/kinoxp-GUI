@@ -24,18 +24,17 @@
       <table class="table" id="createBookingTable">
         <tr>
           <th>Titel</th>
-          <th>Sal nr.</th>
           <th>Dato</th>
           <th>start tid</th>
           <th>min alder</th>
           <th>showID</th>
+          <th>Sal nr.</th>
         </tr>
       </table>
     </div>
   </div>
 
   <h1>Opret booking</h1>
-  <form>
     <div class="form-group">
       <label for="name">Kunde navn</label>
       <input type="text" class="form-control" id="name" name="name" required>
@@ -43,7 +42,7 @@
 
     <div class="form-group">
       <label for="phoneNum">Kunde tlf. nummer</label>
-      <input type="number" class="form-control" id="phoneNum" name="phoneNum" required>
+      <input type="tel" class="form-control" id="phoneNum" name="phoneNum" required>
     </div>
 
     <div class="form-group">
@@ -81,10 +80,10 @@
       <input type="number" class="form-control" id="seatNum05" name="seatNum05">
     </div>
 
-    <button class="btn btn-primary">Opret</button>
-  </form>
+    <button class="btn btn-primary createBookingButton">Opret</button>
 </div>
 
-<script src="../js/createBooking.js"></script>
+<script src="../js/bookings/createBooking.js"></script>
+<script src="../js/bookings/findShow-forCreateBookingPurposes.js"></script>
 </body>
 </html>

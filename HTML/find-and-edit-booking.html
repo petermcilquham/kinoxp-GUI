@@ -7,27 +7,30 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 
 <div class="container">
-  <form>
     <div class="form-group">
       <label for="booking">Indtast kunde telefon nummer</label>
       <input type="number" class="form-control" id="booking" name="booking" required>
     </div>
-
     <button type="submit" class="btn btn-primary">Find booking</button>
-  </form>
   <!--    todo:-->
   <p>retur felt? noget der viser den booking man har fundet</p>
 </div>
 
-<h1>Edit booking</h1>
-<form>
+<div class="container">
+  <h1>Edit booking</h1>
+
+  <div class="form-group">
+    <label for="bookingID">Booking ID</label>
+    <input type="text" class="form-control" id="bookingID" name="bookingID" required>
+  </div>
+
   <div class="form-group">
     <label for="name">Kunde navn</label>
     <input type="text" class="form-control" id="name" name="name">
@@ -74,7 +77,7 @@
   </div>
 
   <button type="submit" class="btn btn-primary">Edit</button>
-</form>
+</div>
 
 <!--todo:-->
 <!--se booking-->

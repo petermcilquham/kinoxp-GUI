@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/shows/all";
+const url = "http://localhost:8080/shows/filtered";
 
 const requestOption = {
   headers: {
@@ -13,6 +13,7 @@ fetch(url, requestOption)
   .then(data => gotData(data));
 
 function gotData(data){
+  console.log(data);
   data.forEach(addRow);
 }
 
@@ -50,4 +51,8 @@ function addRow(data) {
 
   let cell10 = row.insertCell(9);
   cell10.innerHTML = data.showId;
+}
+
+function parseDate(){
+  return parsedDate;
 }
