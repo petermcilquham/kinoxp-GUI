@@ -10,28 +10,44 @@
   <link href="../css/bootstrap.css" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
+
 </head>
 
 <body>
 
 <div class="container">
   <h1>Admin login</h1>
-  <form action="/adminLoginServiceClass">
+  <form id="login-form" method="post">
 <!--    adminLoginServiceClass klasse er ikke blevet oprettet endnu-->
 
     <div class="form-group">
       <label for="user">Username</label><br>
-      <input type="password" class=“form-control" id="user" placeholder="Type Your Username" name="user">
+      <input type="text" class=“form-control" id="user" placeholder="Type Your Username" name="user" required>
     </div>
 
     <div class="form-group">
-      <label for="pwd">Password</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Type Your Password" name="password">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Type Your Password" name="password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Log in</button>
+    <button id="login-btn" type="submit" class="btn btn-primary" onclick="return validate()" >Log in</button>
   </form>
 </div>
+<script>
+  function validate() {
+    let user = document.getElementById("user").value;
+    let password = document.getElementById("password").value;
 
+    if (user === "admin" && password === "admin") {
+      alert("Access Granted");
+      window.location = "admin.html";
+      return false;
+    } else {
+      alert("Access Denied");
+      return false;
+    }
+  }
+
+</script>
 </body>
 </html>
