@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+
 <div class="container">
   <h1>Edit show</h1>
 
@@ -72,12 +73,14 @@
 
 <div class="container">
   <div class="form-group">
-    <label for="show">Søg efter show ved ID</label>
+    <label for="show"></label>
+    <strong>Søg efter show ved ID</strong>
     <input type="text" class="form-control" id="show" name="show" required>
   </div>
 
   <button type="submit" class="btn btn-primary findShowButton">Find show</button>
   <button type="submit" class="btn btn-primary seeAllShowsButton">Se alle shows</button>
+  <button type="submit" class="btn btn-primary deleteShow">Slet show</button>
 </div>
 
 <div class="container-fluid">
@@ -85,6 +88,7 @@
     <tr>
       <th>Titel</th>
       <th>Sal nr.</th>
+      <th>Dato</th>
       <th>start tid</th>
       <th>længde</th>
       <th>genre</th>
@@ -97,5 +101,7 @@
 </div>
 
 <script src="../js/shows/editShow.js"></script>
+<script src="../js/shows/deleteShow.js"></script>
+<script src="../js/shows/findShow.js"></script>
 </body>
 </html>

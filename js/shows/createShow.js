@@ -14,8 +14,8 @@ createShowBtn.onclick = function(){
     "movieTitle": `${in1.value}`,
     "cinemaHall": `${in2.value}`,
     "date": `${in3.value}`,
-    "startTime": `${in4.value}:00`,
-    "duration": `${in5.value}:00`,
+    "startTime": `${in4.value}`,
+    "duration": `${in5.value}`,
     "genre": `${in6.value}`,
     "ageReq": `${in7.value}`,
     "stars": `${in8.value}`,
@@ -39,3 +39,47 @@ function postFunction(inputValue){
   fetch(url, requestOption)
     .then(response => response.json())
 }
+
+// async function postFormDataAsJson({url, formData}){
+//   const plainFormData = Object.fromEntries(formData.entries());
+//   const formDataJsonString = JSON.stringify(plainFormData);
+//
+//   const fetchOptions = {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//     body: formDataJsonString,
+//   };
+//
+//   const response = await fetch(url, fetchOptions);
+//
+//   if (!response.ok) {
+//     const errorMessage = await response.text();
+//     throw new Error(errorMessage);
+//   }
+//
+//   return response.json();
+// }
+//
+// async function handleFormSubmit(event) {
+//   event.preventDefault();
+//
+//   let form = event.currentTarget;
+//   const url = form.action;
+//   console.log(url)
+//   console.log(form)
+//
+//   try {
+//     const formData = new FormData(form);
+//     const responseData = await postFormDataAsJson({ url, formData });
+//
+//     console.log({ responseData });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+//
+// const createShowForm = document.getElementById("createShow-Form");
+// createShowForm.addEventListener("submit", handleFormSubmit);
