@@ -14,8 +14,10 @@
 <body>
 
 <div class="container">
+<!--find booking ved kunde telefon nummer-->
     <div class="form-group">
-      <label for="booking">Indtast kunde telefon nummer</label>
+      <label for="booking"></label>
+      <strong>Indtast kunde telefon nummer</strong>
       <input type="text" class="form-control" id="booking" name="booking" required>
       <button type="submit" class="btn btn-primary findBookingButton">Find booking</button>
       <br><br>
@@ -35,11 +37,13 @@
             <th>Sæde 5.</th>
           </tr>
         </table>
-
       </div>
     </div>
+
+  <!--udskriv booking billetter-->
     <div class="form-group">
-      <label for="printBooking">Vælg booking id</label>
+      <label for="printBooking"></label>
+      <strong>Vælg booking id</strong>
       <input type="text" class="form-control" id="printBooking" name="printBooking" required>
       <button type="button" class="btn btn-primary printBookingButton">Udskriv Billetter</button>
       <br><br>
@@ -47,6 +51,18 @@
 
 </div>
 
+<!--slet booking-->
+<div class="container">
+  <div class="form-group">
+    <label for="deleteBooking"></label>
+    <strong>Vælg id til sletning</strong>
+    <input type="number" class="form-control" id="deleteBooking" name="deleteBooking" required>
+    <button type="button" class="btn btn-primary deleteBookingButton">Slet booking</button>
+  </div>
+</div>
+
+<br><br>
+<!--edit booking-->
 <div class="container">
   <h1>Edit booking</h1>
 
@@ -100,14 +116,12 @@
     <input type="number" class="form-control" id="seatNum05" name="seatNum05">
   </div>
 
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-primary editBookingButton">Edit</button>
 </div>
 
 <script src="../js/bookings/findBooking.js"></script>
-
-<!--todo:-->
-<!--se booking-->
-<!--ændr booking knap-->
-<!--slet booking knap-->
+<script src="../js/bookings/deleteBooking.js"></script>
+<script src="../js/bookings/editBooking.js"></script>
+<script src="../js/bookings/printBookingTicket.js"></script>
 </body>
 </html>
