@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+
 <div class="container">
   <h1>Edit show</h1>
 
@@ -37,12 +38,12 @@
 
   <div class="form-group">
     <label for="startTime">Start tidspunkt</label>
-    <input type="time" class="form-control" id="startTime" name="startTime">
+    <input type="time" step="1" class="form-control" id="startTime" name="startTime">
   </div>
 
   <div class="form-group">
     <label for="duration">Film længde</label>
-    <input type="time" class="form-control" id="duration" name="duration">
+    <input type="time" step="1" class="form-control" id="duration" name="duration">
   </div>
 
   <div class="form-group">
@@ -60,6 +61,7 @@
     <input type="text" class="form-control" id="stars" name="stars">
   </div>
 
+  <!--  ****************billede input******************** -->
   <!--    <div class="form-group">-->
   <!--      <label for="img">Billede</label>-->
   <!--      <input type="image" class="form-control" id="img" name="img" alt="missing picture">-->
@@ -72,19 +74,22 @@
 
 <div class="container">
   <div class="form-group">
-    <label for="show">Søg efter show ved ID</label>
-    <input type="number" class="form-control" id="show" name="show" required>
+    <label for="show"></label>
+    <strong>Søg efter show ved ID</strong>
+    <input type="text" class="form-control" id="show" name="show" required>
   </div>
 
   <button type="submit" class="btn btn-primary findShowButton">Find show</button>
   <button type="submit" class="btn btn-primary seeAllShowsButton">Se alle shows</button>
+  <button type="submit" class="btn btn-primary deleteShow">Slet show</button>
 </div>
 
 <div class="container-fluid">
-  <table class="table" id="showsDataTable">
+  <table class="table" id="showDataTable">
     <tr>
       <th>Titel</th>
       <th>Sal nr.</th>
+      <th>Dato</th>
       <th>start tid</th>
       <th>længde</th>
       <th>genre</th>
@@ -97,5 +102,7 @@
 </div>
 
 <script src="../js/shows/editShow.js"></script>
+<script src="../js/shows/deleteShow.js"></script>
+<script src="../js/shows/findShow.js"></script>
 </body>
 </html>

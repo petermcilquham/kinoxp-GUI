@@ -24,8 +24,6 @@ createBookingBtn.onclick = function(){
 }
 
 function postFunction(inputValue){
-  console.log(inputValue);
-
   const url = "http://localhost:8080/booking/create";
 
   let requestBody = JSON.stringify(inputValue);
