@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="container">
+  <h1>Edit show</h1>
+
+  <div class="form-group">
+    <label for="showID">Show ID</label>
+    <input type="text" class="form-control" id="showID" name="showID" required>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Titel</label>
+    <input type="text" class="form-control" id="title" name="title">
+  </div>
+
+  <div class="form-group">
+    <label for="cinemaHall">Sal nr.</label>
+    <input type="number" class="form-control" id="cinemaHall" name="cinemaHall">
+  </div>
+
+  <div class="form-group">
+    <label for="date">Dato</label>
+    <input type="date" class="form-control" id="date" name="date">
+  </div>
+
+  <div class="form-group">
+    <label for="startTime">Start tidspunkt</label>
+    <input type="time" step="1" class="form-control" id="startTime" name="startTime">
+  </div>
+
+  <div class="form-group">
+    <label for="duration">Film længde</label>
+    <input type="time" step="1" class="form-control" id="duration" name="duration">
+  </div>
+
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <input type="text" class="form-control" id="genre" name="genre">
+  </div>
+
+  <div class="form-group">
+    <label for="ageReq">Alderskrav</label>
+    <input type="number" class="form-control" id="ageReq" name="ageReq">
+  </div>
+
+  <div class="form-group">
+    <label for="stars">Medvirkende</label>
+    <input type="text" class="form-control" id="stars" name="stars">
+  </div>
+
+  <!--    <div class="form-group">-->
+  <!--      <label for="img">Billede</label>-->
+  <!--      <input type="image" class="form-control" id="img" name="img" alt="missing picture">-->
+  <!--    </div>-->
+
+  <button type="submit" class="btn btn-primary editShowButton">Edit</button>
+</div>
+
+<br><br>
+
+<div class="container">
+  <div class="form-group">
+    <label for="show">Søg efter show ved ID</label>
+    <input type="text" class="form-control" id="show" name="show" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary findShowButton">Find show</button>
+  <button type="submit" class="btn btn-primary seeAllShowsButton">Se alle shows</button>
+</div>
+
+<div class="container-fluid">
+  <table class="table" id="showDataTable">
+    <tr>
+      <th>Titel</th>
+      <th>Sal nr.</th>
+      <th>start tid</th>
+      <th>længde</th>
+      <th>genre</th>
+      <th>min alder</th>
+      <th>medvirkende</th>
+      <th>billed</th>
+      <th>showID</th>
+    </tr>
+  </table>
+</div>
+
+<script src="../js/shows/editShow.js"></script>
+</body>
+</html>

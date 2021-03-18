@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-group">
+    <label for="title">Find show via titel</label>
+    <input type="text" class="form-control" id="title" name="title">
+    <button type="submit" class="btn btn-primary findShowTitleButton">Søg</button>
+    <br><br>
+
+    <div class="container-fluid">
+      <table class="table" id="createBookingTable">
+        <tr>
+          <th>Titel</th>
+          <th>Dato</th>
+          <th>start tid</th>
+          <th>min alder</th>
+          <th>showID</th>
+          <th>Sal nr.</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <h1>Opret booking</h1>
+    <div class="form-group">
+      <label for="name">Kunde navn</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNum">Kunde tlf. nummer</label>
+      <input type="tel" class="form-control" id="phoneNum" name="phoneNum" required>
+    </div>
+
+    <div class="form-group">
+      <label for="showId">Show ID</label>
+      <input type="number" class="form-control" id="showId" name="showId" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cinemaHall">Sal nr.</label>
+      <input type="number" class="form-control" id="cinemaHall" name="cinemaHall" required>
+    </div>
+
+    <div class="form-group">
+      <label for="seatNum01">Sæde 1</label>
+      <input type="number" class="form-control" id="seatNum01" name="seatNum01" required>
+    </div>
+
+    <div class="form-group">
+      <label for="seatNum02">Sæde 2</label>
+      <input type="number" class="form-control" id="seatNum02" name="seatNum02">
+    </div>
+
+    <div class="form-group">
+      <label for="seatNum03">Sæde 3</label>
+      <input type="number" class="form-control" id="seatNum03" name="seatNum03">
+    </div>
+
+    <div class="form-group">
+      <label for="seatNum04">Sæde 4</label>
+      <input type="number" class="form-control" id="seatNum04" name="seatNum04">
+    </div>
+
+    <div class="form-group">
+      <label for="seatNum05">Sæde 5</label>
+      <input type="number" class="form-control" id="seatNum05" name="seatNum05">
+    </div>
+
+    <button class="btn btn-primary createBookingButton">Opret</button>
+</div>
+
+<script src="../js/bookings/createBooking.js"></script>
+<script src="../js/bookings/findShow-forCreateBookingPurposes.js"></script>
+</body>
+</html>

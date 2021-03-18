@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/show/all";
+const url = "http://localhost:8080/shows/filtered";
 
 const requestOption = {
   headers: {
@@ -13,12 +13,11 @@ fetch(url, requestOption)
   .then(data => gotData(data));
 
 function gotData(data){
-  console.log(data);
   data.forEach(addRow);
 }
 
 function addRow(data) {
-  const table = document.getElementById("showsDataTable");
+  const table = document.querySelector(".showsDataTable");
   let rowCount = table.rows.length;
   let row = table.insertRow(rowCount);
 
@@ -29,23 +28,27 @@ function addRow(data) {
   cell2.innerHTML = data.cinemaHall;
 
   let cell3 = row.insertCell(2);
-  cell3.innerHTML = data.startTime;
+  let date = new Date(data.date);
+  cell3.innerHTML = date.toISOString().slice(0, 10);
 
   let cell4 = row.insertCell(3);
-  cell4.innerHTML = data.duration;
+  cell4.innerHTML = data.startTime;
 
   let cell5 = row.insertCell(4);
-  cell5.innerHTML = data.genre;
+  cell5.innerHTML = data.duration;
 
   let cell6 = row.insertCell(5);
-  cell6.innerHTML = data.ageReq;
+  cell6.innerHTML = data.genre;
 
   let cell7 = row.insertCell(6);
-  cell7.innerHTML = data.stars;
+  cell7.innerHTML = data.ageReq;
 
   let cell8 = row.insertCell(7);
-  cell8.innerHTML = data.movieImg;
+  cell8.innerHTML = data.stars;
 
   let cell9 = row.insertCell(8);
-  cell9.innerHTML = data.showId;
+  cell9.innerHTML = data.movieImg;
+
+  let cell10 = row.insertCell(9);
+  cell10.innerHTML = data.showId;
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-group">
+      <label for="booking">Indtast kunde telefon nummer</label>
+      <input type="text" class="form-control" id="booking" name="booking" required>
+      <button type="submit" class="btn btn-primary findBookingButton">Find booking</button>
+      <br><br>
+
+      <div class="container-fluid">
+        <table class="table" id="createBookingTable1">
+          <tr>
+            <th>BookingID</th>
+            <th>Navn</th>
+            <th>Tlf. Nummer</th>
+            <th>showID</th>
+            <th>Sal nr.</th>
+            <th>Sæde 1.</th>
+            <th>Sæde 2.</th>
+            <th>Sæde 3.</th>
+            <th>Sæde 4.</th>
+            <th>Sæde 5.</th>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="printBooking">Vælg booking id</label>
+      <input type="text" class="form-control" id="printBooking" name="printBooking" required>
+      <button type="button" class="btn btn-primary printBookingButton">Udskriv Billetter</button>
+      <br><br>
+    </div>
+
+</div>
+
+<div class="container">
+  <h1>Edit booking</h1>
+
+  <div class="form-group">
+    <label for="bookingID">Booking ID</label>
+    <input type="text" class="form-control" id="bookingID" name="bookingID" required>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Kunde navn</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="phoneNum">Kunde tlf. nummer</label>
+    <input type="number" class="form-control" id="phoneNum" name="phoneNum">
+  </div>
+
+  <div class="form-group">
+    <label for="showId">Show ID</label>
+    <input type="number" class="form-control" id="showId" name="showId">
+  </div>
+
+  <div class="form-group">
+    <label for="cinemaHall">Sal nr.</label>
+    <input type="number" class="form-control" id="cinemaHall" name="cinemaHall">
+  </div>
+
+  <div class="form-group">
+    <label for="seatNum01">Sæde 1</label>
+    <input type="number" class="form-control" id="seatNum01" name="seatNum01">
+  </div>
+
+  <div class="form-group">
+    <label for="seatNum02">Sæde 2</label>
+    <input type="number" class="form-control" id="seatNum02" name="seatNum02">
+  </div>
+
+  <div class="form-group">
+    <label for="seatNum03">Sæde 3</label>
+    <input type="number" class="form-control" id="seatNum03" name="seatNum03">
+  </div>
+
+  <div class="form-group">
+    <label for="seatNum04">Sæde 4</label>
+    <input type="number" class="form-control" id="seatNum04" name="seatNum04">
+  </div>
+
+  <div class="form-group">
+    <label for="seatNum05">Sæde 5</label>
+    <input type="number" class="form-control" id="seatNum05" name="seatNum05">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Edit</button>
+</div>
+
+<script src="../js/bookings/findBooking.js"></script>
+
+<!--todo:-->
+<!--se booking-->
+<!--ændr booking knap-->
+<!--slet booking knap-->
+</body>
+</html>

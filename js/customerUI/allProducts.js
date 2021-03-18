@@ -13,7 +13,6 @@ fetch(url, requestOption)
   .then(data => gotData(data));
 
 function gotData(data){
-  console.log(data);
   data.forEach(addRow);
 }
 
