@@ -24,12 +24,34 @@
   </div>
 </div>
 
+<!-- produkt type dropdown -->
+<div>
+  <select name="productTypeSelect" id="productTypeSelect" onchange="filteredType()">
+    <option hidden selected>Sortér efter produkt type</option>
+    <option value="all">Vis alle typer</option>
+    <option value="merch">Merchandise</option>
+    <option value="sweets">Sweets</option>
+    <option value="drink">Drink</option>
+    <option value="food">Food</option>
+  </select>
+</div>
+
 <!-- produkter tabel -->
 <div class="container-fluid">
   <table class="table" id="productsDataTable">
+    <tr>
+      <th>Produkt Id</th>
+      <th>Produkt Type</th>
+      <th>Produkt Navn</th>
+      <th>Pris</th>
+      <th>Tilføj til kurv</th>
+    </tr>
   </table>
 </div>
 
-<script src="../js/customerUI/allProducts.js"></script>
+<!--<button type="submit" class="btn btn-primary addToCart" hidden>Tilføj til kurv</button>-->
+
+
+<script src="../js/shop/findProducts.js"></script>
 </body>
 </html>
