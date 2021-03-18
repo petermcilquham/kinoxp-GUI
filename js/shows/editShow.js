@@ -21,41 +21,15 @@ editShowBtn.onclick = function(){
     "genre": `${in7.value}`,
     "ageReq": `${in8.value}`,
     "stars": `${in9.value}`,
+    //"movieImg": `${in10.value}`
   });
 }
 
 function postFunction(inputValue){
-  const url = "http://localhost:8080/shows/edit";
+  const url = `http://localhost:8080/shows/put/${in1.value}`;
 
-  // let inValFiltered = {}
-  // inValFiltered.showId = inputValue.showId
-  // if(inputValue.movieTitle.length > 0){
-  //   inValFiltered.movieTitle = inputValue.movieTitle;
-  // }
-  // if(inputValue.cinemaHall.length > 0){
-  //   inValFiltered.cinemaHall = inputValue.cinemaHall;
-  // }
-  // if(inputValue.date.length > 0){
-  //   inValFiltered.date = inputValue.date;
-  // }
-  // if(inputValue.startTime.length > 0){
-  //   inValFiltered.startTime = inputValue.startTime;
-  // }
-  // if(inputValue.duration.length > 0){
-  //   inValFiltered.duration = inputValue.duration;
-  // }
-  // if(inputValue.genre.length > 0){
-  //   inValFiltered.genre = inputValue.genre;
-  // }
-  // if(inputValue.ageReq.length > 0){
-  //   inValFiltered.ageReq = inputValue.ageReq;
-  // }
-  // if(inputValue.stars.length > 0){
-  //   inValFiltered.stars = inputValue.stars;
-  // }
-
-  //let requestBody = JSON.stringify(inValFiltered);
-  let requestBody = JSON.stringify(inputValue);
+  const filteredData = filterMethod(inputValue)
+  let requestBody = JSON.stringify(filteredData);
 
   console.log(requestBody)
 
@@ -70,6 +44,40 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+}
+
+function filterMethod(inputValue){
+  let inValFiltered = {}
+
+  inValFiltered.showId = inputValue.showId
+
+  if(inputValue.movieTitle.length > 0){
+    inValFiltered.movieTitle = inputValue.movieTitle;
+  }
+  if(inputValue.cinemaHall.length > 0){
+    inValFiltered.cinemaHall = inputValue.cinemaHall;
+  }
+  if(inputValue.date.length > 0){
+    inValFiltered.date = inputValue.date;
+  }
+  if(inputValue.startTime.length > 0){
+    inValFiltered.startTime = inputValue.startTime;
+  }
+  if(inputValue.duration.length > 0){
+    inValFiltered.duration = inputValue.duration;
+  }
+  if(inputValue.genre.length > 0){
+    inValFiltered.genre = inputValue.genre;
+  }
+  if(inputValue.ageReq.length > 0){
+    inValFiltered.ageReq = inputValue.ageReq;
+  }
+  if(inputValue.stars.length > 0){
+    inValFiltered.stars = inputValue.stars;
+  }
+  // if(inputValue.movieImg.length > 0){
+  //   inValFiltered.movieImg = inputValue.movieImg;
+  // }
 }
 
 

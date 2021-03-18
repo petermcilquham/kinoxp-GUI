@@ -19,6 +19,7 @@ createShowBtn.onclick = function(){
     "genre": `${in6.value}`,
     "ageReq": `${in7.value}`,
     "stars": `${in8.value}`,
+    //"movieImg": `${in9.value}`
   });
 }
 
@@ -40,39 +41,46 @@ function postFunction(inputValue){
     .then(response => response.json())
 }
 
+
+//********************form shizzle****************
+//virker ikke
+
 // async function postFormDataAsJson({url, formData}){
 //   const plainFormData = Object.fromEntries(formData.entries());
 //   const formDataJsonString = JSON.stringify(plainFormData);
 //
-//   const fetchOptions = {
-//     method: "POST",
+//   const requestOptions = {
+//     'content-type': 'application/json',
+//     method: 'POST',
+//     redirect: 'follow',
 //     headers: {
-//       "Content-Type": "application/json",
-//       Accept: "application/json",
+//       'Content-Type': 'application/json',
 //     },
-//     body: formDataJsonString,
+//     body: formDataJsonString
 //   };
 //
-//   const response = await fetch(url, fetchOptions);
+//   const responseData = await fetch(url, requestOptions);
 //
-//   if (!response.ok) {
-//     const errorMessage = await response.text();
+//   if (!responseData.ok) {
+//     const errorMessage = await responseData.text();
 //     throw new Error(errorMessage);
 //   }
 //
-//   return response.json();
+//   return await responseData.json();
 // }
 //
-// async function handleFormSubmit(event) {
-//   event.preventDefault();
+// async function handleFormSubmit(mouseEvent) {
+//   mouseEvent.preventDefault();
 //
-//   let form = event.currentTarget;
+//   let form = mouseEvent.currentTarget;
 //   const url = form.action;
 //   console.log(url)
 //   console.log(form)
 //
+//   const formData = new FormData(form);
+//   const plainFormData = Object.fromEntries(formData.entries());
+//
 //   try {
-//     const formData = new FormData(form);
 //     const responseData = await postFormDataAsJson({ url, formData });
 //
 //     console.log({ responseData });
