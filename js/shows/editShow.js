@@ -26,7 +26,7 @@ editShowBtn.onclick = function(){
 }
 
 function postFunction(inputValue){
-  const url = `http://localhost:8080/shows/put/${in1.value}`;
+  const url = `http://localhost:8080/shows/edit/${in1.value}`;
 
   const filteredData = filterMethod(inputValue)
   let requestBody = JSON.stringify(filteredData);

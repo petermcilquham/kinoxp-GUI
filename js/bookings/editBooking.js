@@ -26,9 +26,10 @@ editBookingBtn.onclick = function(){
 }
 
 function postFunction(inputValue){
-  const url = "http://localhost:8080/booking/edit";
+  const url = `http://localhost:8080/booking/edit/${in1.value}`;
 
-  let requestBody = JSON.stringify(inputValue);
+  const filteredData = filterMethod(inputValue)
+  let requestBody = JSON.stringify(filteredData);
 
   console.log(requestBody)
 
@@ -43,4 +44,38 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+}
+
+function filterMethod(inputValue){
+  let inValFiltered = {}
+
+  inValFiltered.bookingId = inputValue.bookingId
+
+  if(inputValue.customerName.length > 0){
+    inValFiltered.customerName = inputValue.customerName;
+  }
+  if(inputValue.customerMobileNumber.length > 0){
+    inValFiltered.customerMobileNumber = inputValue.customerMobileNumber;
+  }
+  if(inputValue.showId.length > 0){
+    inValFiltered.showId = inputValue.showId;
+  }
+  if(inputValue.cinemaHallId.length > 0){
+    inValFiltered.cinemaHallId = inputValue.cinemaHallId;
+  }
+  if(inputValue.seatNum01.length > 0){
+    inValFiltered.seatNum01 = inputValue.seatNum01;
+  }
+  if(inputValue.seatNum02.length > 0){
+    inValFiltered.seatNum02 = inputValue.seatNum02;
+  }
+  if(inputValue.seatNum03.length > 0){
+    inValFiltered.seatNum03 = inputValue.seatNum03;
+  }
+  if(inputValue.seatNum04.length > 0){
+    inValFiltered.seatNum04 = inputValue.seatNum04;
+  }
+  if(inputValue.seatNum05.length > 0){
+    inValFiltered.seatNum05 = inputValue.seatNum05;
+  }
 }
