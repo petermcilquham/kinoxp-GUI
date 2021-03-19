@@ -39,5 +39,6 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
-  location.reload()
+
+  location.reload();
 }

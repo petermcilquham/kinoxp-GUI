@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="../../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+  <div>
+    <h1>Opret Produkt</h1>
+    <div class="form-group">
+      <select name="productTypeSelect" id="productTypeSelect">
+        <option hidden selected>Vælg efter produkt type</option>
+        <option value="merch">Tøj</option>
+        <option value="sweets">Slik</option>
+        <option value="drink">Drikelse</option>
+        <option value="food">Mad</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="productName">Produkt navn</label>
+      <input type="text" class="form-control" id="productName" name="productName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="productPrice">Pris</label>
+      <input type="number" class="form-control" id="productPrice" name="productPrice" required>
+    </div>
+    <button class="btn btn-primary createProductButton">Opret</button>
+  </div>
+
+  <script src="../../js/shop/createProduct.js"></script>
+</body>
+</html>

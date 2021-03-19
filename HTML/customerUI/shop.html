@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy this, buy that, buy everything!</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+
+  <link href="../../css/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+
+<!-- nav bar / banner -->
+<div class="container-fluid banner">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-2"><a href="index.html">Home</a></div>
+    <div class="col-2"><a href="shop.html">Shop</a></div>
+    <div class="col-2"><a href="../admin/admin-login.html">Admin</a></div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+<!-- produkt type dropdown -->
+<div class="container-fluid">
+  <select name="productTypeSelect" id="productTypeSelect" onchange="filteredType()">
+    <option hidden selected>Sortér efter produkt type</option>
+    <option value="all">Vis alle typer</option>
+    <option value="merch">Tøj</option>
+    <option value="sweets">Slik</option>
+    <option value="drink">Drikelse</option>
+    <option value="food">Mad</option>
+  </select>
+</div>
+
+<!-- produkter tabel -->
+<div class="container-fluid">
+  <table class="table" id="productsDataTable">
+    <tr>
+      <th>Produkt Id</th>
+      <th>Produkt Type</th>
+      <th>Produkt Navn</th>
+      <th>Pris</th>
+      <th>Tilføj til kurv</th>
+    </tr>
+  </table>
+</div>
+
+<script src="../../js/customerUI/allProducts.js"></script>
+</body>
+</html>
