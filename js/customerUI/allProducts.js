@@ -58,7 +58,7 @@ function addRow(data) {
 
   let cell5 = row.insertCell(4);
   const addToCartBtn = document.createElement("BUTTON");
-  const btnTxt = document.createTextNode("Køb :^)");
+  const btnTxt = document.createTextNode("Køb");
   addToCartBtn.appendChild(btnTxt);
   cell5.appendChild(addToCartBtn);
   addToCartBtn.onclick = function () {alert(data.productName + " solgt for " + data.price + "kr") }
