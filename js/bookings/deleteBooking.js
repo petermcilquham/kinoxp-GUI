@@ -10,10 +10,11 @@ function deleteFunction(url){
     headers: {
       "Content-type": 'application/json'
     },
-    method: 'DELETE',
+    method: 'GET',
     redirect: 'follow'
   };
 
   fetch(url, requestOption)
     .then(response => response.json())
+  location.reload()
 }

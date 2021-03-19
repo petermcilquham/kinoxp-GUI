@@ -31,8 +31,6 @@ function postFunction(inputValue){
   const filteredData = filterMethod(inputValue)
   let requestBody = JSON.stringify(filteredData);
 
-  console.log(requestBody)
-
   const requestOption = {
     headers: {
       "Content-type": 'application/json'
@@ -44,6 +42,7 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+  location.reload()
 }
 
 function filterMethod(inputValue){
@@ -78,6 +77,7 @@ function filterMethod(inputValue){
   // if(inputValue.movieImg.length > 0){
   //   inValFiltered.movieImg = inputValue.movieImg;
   // }
+  return inValFiltered;
 }
 
 

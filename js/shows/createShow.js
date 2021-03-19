@@ -6,7 +6,7 @@ const in5 = document.getElementById("duration");
 const in6 = document.getElementById("genre");
 const in7 = document.getElementById("ageReq");
 const in8 = document.getElementById("stars");
-// const in9 = document.getElementById("img");
+const in9 = document.getElementById("img");
 
 const createShowBtn = document.querySelector(".createShowButton");
 createShowBtn.onclick = function(){
@@ -19,7 +19,7 @@ createShowBtn.onclick = function(){
     "genre": `${in6.value}`,
     "ageReq": `${in7.value}`,
     "stars": `${in8.value}`,
-    //"movieImg": `${in9.value}`
+    // "movieImg": `${in9.value}`
   });
 }
 
@@ -39,10 +39,11 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+  location.reload()
 }
 
 
-//********************form shizzle****************
+//******************** form data shizzle ****************
 //virker ikke
 
 // async function postFormDataAsJson({url, formData}){

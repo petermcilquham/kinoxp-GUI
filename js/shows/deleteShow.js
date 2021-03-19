@@ -16,4 +16,5 @@ function deleteFunction(url){
 
   fetch(url, requestOption)
     .then(response => response.json())
+  location.reload()
 }
