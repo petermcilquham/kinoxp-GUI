@@ -44,6 +44,8 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+
+  location.reload();
 }
 
 function filterMethod(inputValue){
@@ -78,6 +80,7 @@ function filterMethod(inputValue){
   // if(inputValue.movieImg.length > 0){
   //   inValFiltered.movieImg = inputValue.movieImg;
   // }
+  return inValFiltered;
 }
 
 

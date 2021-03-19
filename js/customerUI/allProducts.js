@@ -9,7 +9,13 @@ const requestOption = {
 
 function filteredType() {
   const dropdownInput = document.getElementById("productTypeSelect")
-  fetchType(dropdownInput)
+
+  if (dropdownInput.value === "all") {
+    clearTable()
+    fetchAll()
+  } else {
+    fetchType(dropdownInput)
+  }
 }
 
 function fetchType(dropdownInput) {
@@ -55,8 +61,7 @@ function addRow(data) {
   const btnTxt = document.createTextNode("Køb :^)");
   addToCartBtn.appendChild(btnTxt);
   cell5.appendChild(addToCartBtn);
-  addToCartBtn.onclick = function () {alert(data.productName + " solgt for " + data.price + "kr" +
-  "\n big $$$$$$$$$$$$$") }
+  addToCartBtn.onclick = function () {alert(data.productName + " solgt for " + data.price + "kr") }
 }
 
 // function fetchById(data){

@@ -44,6 +44,8 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
+
+  location.reload();
 }
 
 function filterMethod(inputValue){
@@ -78,4 +80,5 @@ function filterMethod(inputValue){
   if(inputValue.seatNum05.length > 0){
     inValFiltered.seatNum05 = inputValue.seatNum05;
   }
+  return inValFiltered;
 }
