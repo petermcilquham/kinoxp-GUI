@@ -11,7 +11,7 @@ const in10 = document.getElementById("seatNum05");
 
 const editBookingBtn = document.querySelector(".editBookingButton");
 editBookingBtn.onclick = function(){
-  postFunction({
+  putFunction({
     "bookingId": `${in1.value}`,
     "customerName": `${in2.value}`,
     "customerMobileNumber": `${in3.value}`,
@@ -25,8 +25,8 @@ editBookingBtn.onclick = function(){
   });
 }
 
-function postFunction(inputValue){
-  const url = `http://localhost:8080/booking/edit/${in1.value}`;
+function putFunction(inputValue){
+  const url = "http://localhost:8080/booking/edit";
 
   const filteredData = filterMethod(inputValue)
   let requestBody = JSON.stringify(filteredData);
@@ -42,40 +42,22 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
-  location.reload();
 }
 
 function filterMethod(inputValue){
-  let inValFiltered = {}
 
-  inValFiltered.bookingId = inputValue.bookingId
+  let arr = Object.entries(inputValue)
 
-  if(inputValue.customerName.length > 0){
-    inValFiltered.customerName = inputValue.customerName;
+  let count = 0
+  let spliceCount = arr.length
+  for(const [key, value] of arr){
+    if(value.length < 1){
+      delete arr[count]
+      spliceCount--
+    }
+    count++
   }
-  if(inputValue.customerMobileNumber.length > 0){
-    inValFiltered.customerMobileNumber = inputValue.customerMobileNumber;
-  }
-  if(inputValue.showId.length > 0){
-    inValFiltered.showId = inputValue.showId;
-  }
-  if(inputValue.cinemaHallId.length > 0){
-    inValFiltered.cinemaHallId = inputValue.cinemaHallId;
-  }
-  if(inputValue.seatNum01.length > 0){
-    inValFiltered.seatNum01 = inputValue.seatNum01;
-  }
-  if(inputValue.seatNum02.length > 0){
-    inValFiltered.seatNum02 = inputValue.seatNum02;
-  }
-  if(inputValue.seatNum03.length > 0){
-    inValFiltered.seatNum03 = inputValue.seatNum03;
-  }
-  if(inputValue.seatNum04.length > 0){
-    inValFiltered.seatNum04 = inputValue.seatNum04;
-  }
-  if(inputValue.seatNum05.length > 0){
-    inValFiltered.seatNum05 = inputValue.seatNum05;
-  }
-  return inValFiltered;
+  arr.splice(spliceCount)
+
+  return Object.fromEntries(arr);
 }

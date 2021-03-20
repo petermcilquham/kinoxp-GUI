@@ -11,7 +11,7 @@ const in9 = document.getElementById("stars");
 
 const editShowBtn = document.querySelector(".editShowButton");
 editShowBtn.onclick = function(){
-  postFunction({
+  putFunction({
     "showId": `${in1.value}`,
     "movieTitle": `${in2.value}`,
     "cinemaHall": `${in3.value}`,
@@ -25,8 +25,8 @@ editShowBtn.onclick = function(){
   });
 }
 
-function postFunction(inputValue){
-  const url = `http://localhost:8080/shows/edit/${in1.value}`;
+function putFunction(inputValue){
+  const url = "http://localhost:8080/shows/edit";
 
   const filteredData = filterMethod(inputValue)
   let requestBody = JSON.stringify(filteredData);
@@ -42,42 +42,24 @@ function postFunction(inputValue){
 
   fetch(url, requestOption)
     .then(response => response.json())
-  location.reload();
 }
 
 function filterMethod(inputValue){
-  let inValFiltered = {}
 
-  inValFiltered.showId = inputValue.showId
+  let arr = Object.entries(inputValue)
 
-  if(inputValue.movieTitle.length > 0){
-    inValFiltered.movieTitle = inputValue.movieTitle;
+  let count = 0
+  let spliceCount = arr.length
+  for(const [key, value] of arr){
+    if(value.length < 1){
+      delete arr[count]
+      spliceCount--
+    }
+    count++
   }
-  if(inputValue.cinemaHall.length > 0){
-    inValFiltered.cinemaHall = inputValue.cinemaHall;
-  }
-  if(inputValue.date.length > 0){
-    inValFiltered.date = inputValue.date;
-  }
-  if(inputValue.startTime.length > 0){
-    inValFiltered.startTime = inputValue.startTime;
-  }
-  if(inputValue.duration.length > 0){
-    inValFiltered.duration = inputValue.duration;
-  }
-  if(inputValue.genre.length > 0){
-    inValFiltered.genre = inputValue.genre;
-  }
-  if(inputValue.ageReq.length > 0){
-    inValFiltered.ageReq = inputValue.ageReq;
-  }
-  if(inputValue.stars.length > 0){
-    inValFiltered.stars = inputValue.stars;
-  }
-  // if(inputValue.movieImg.length > 0){
-  //   inValFiltered.movieImg = inputValue.movieImg;
-  // }
-  return inValFiltered;
+  arr.splice(spliceCount)
+
+  return Object.fromEntries(arr);
 }
 
 
