@@ -45,17 +45,13 @@ function putFunction(inputValue){
 }
 
 function filterMethod(inputValue){
-
   let arr = Object.entries(inputValue)
 
-  let count = 0
   let spliceCount = arr.length
   for(const [key, value] of arr){
     if(value.length < 1){
-      delete arr[count]
       spliceCount--
     }
-    count++
   }
   arr.splice(spliceCount)
 
