@@ -1,0 +1,6 @@
+div{
+  display: inline;
+  border: solid black 1px;
+  border-collapse: collapse;
+  padding: 2px;
+}
