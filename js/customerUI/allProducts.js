@@ -58,7 +58,7 @@ function addRow(data) {
   cell4.innerHTML = data.price + "kr";
 
   let cell5 = row.insertCell(4);
-  const addToCartBtn = document.createElement("BUTTON");
+  addToCartBtn = document.createElement("BUTTON");
   const btnTxt = document.createTextNode("Tilføj til kurv");
   addToCartBtn.appendChild(btnTxt);
   cell5.appendChild(addToCartBtn);
@@ -74,44 +74,35 @@ function fetchById(productId){
 }
 
 const cartArray = [];
-const filteredArray = [];
+var sum = 0;
 
 function shoppingCartData(product){
-  var cartProduct = {cartProductName:`${product.productName}`, productQuantity:0, cartPrice:`${product.price}`}
+  var cartProduct = {cartProductName:`${product.productName}`, cartPrice:`${product.price}`}
   cartArray.push(cartProduct)
-  cartLoop(cartArray)
-}
-
-function cartLoop(cartArray){
-  console.log(cartArray)
-  // cartArray.forEach(filterCart(cartArray))
   cartArray.forEach(shoppingCartRow)
+  totalSum(cartProduct)
+
 }
-//
-// function filterCart(product) {
-//   if (filteredArray.find(product.cartProductName)){
-//     product.quantity += 1
-//   } else {
-//     filteredArray.push(product)
-//   }
-//   return filteredArray
-// }
 
 function shoppingCartRow(cartProduct) {
   let cartRowCount = cartTable.rows.length;
   let cartRow = cartTable.insertRow(cartRowCount);
 
-  // for ( i = 0; i < cartArray.length; i++ ) {
-    let cell1 = cartRow.insertCell(0);
-    cell1.innerHTML = cartProduct.cartProductName
+  let cell1 = cartRow.insertCell(0);
+  cell1.innerHTML = cartProduct.cartProductName
 
-    let cell2 = cartRow.insertCell(1)
-    cell2.innerHTML = cartProduct.productQuantity
+  let cell2 = cartRow.insertCell(1);
+  cell2.innerHTML = cartProduct.cartPrice + "kr"
+}
 
-    let cell3 = cartRow.insertCell(2);
-    cell3.innerHTML = cartProduct.cartPrice + "kr"
+const sumDiv = document.getElementById("cartSum");
+const payBtn = document.querySelector(".payCartButton")
+payBtn.onclick = function () {alert("KØBT!!!") }
 
-
+function totalSum(cartProduct) {
+  var productPrice = parseInt(cartProduct.cartPrice, 10)
+  sum += productPrice
+  sumDiv.innerHTML = sum + "kr"
 }
 
 function clearTable() {
