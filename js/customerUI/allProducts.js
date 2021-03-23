@@ -28,6 +28,7 @@ function fetchType(dropdownInput) {
 
 window.onload = fetchAll();
 const table = document.getElementById("productsDataTable");
+const cartTable = document.getElementById("shoppingCartTable");
 
 function fetchAll(){
   let url = `http://localhost:8080/products/all`;
@@ -58,22 +59,60 @@ function addRow(data) {
 
   let cell5 = row.insertCell(4);
   const addToCartBtn = document.createElement("BUTTON");
-  const btnTxt = document.createTextNode("Køb");
+  const btnTxt = document.createTextNode("Tilføj til kurv");
   addToCartBtn.appendChild(btnTxt);
   cell5.appendChild(addToCartBtn);
-  addToCartBtn.onclick = function () {alert(data.productName + " solgt for " + data.price + "kr") }
+  addToCartBtn.onclick = function () {fetchById(data.productId) }
 }
 
-// function fetchById(data){
-//   let url = `http://localhost:8080/products/id/${data.value}`;
-//   fetch(url, requestOption)
-//     .then(response => response.json())
-//     .then(data1 => addToCart(data1));
-// }
+function fetchById(productId){
+  clearCartTable()
+  let url = `http://localhost:8080/products/id/${productId}`;
+  fetch(url, requestOption)
+    .then(response => response.json())
+    .then(product => shoppingCartData(product));
+}
+
+const cartArray = [];
+const filteredArray = [];
+
+function shoppingCartData(product){
+  var cartProduct = {cartProductName:`${product.productName}`, productQuantity:0, cartPrice:`${product.price}`}
+  cartArray.push(cartProduct)
+  cartLoop(cartArray)
+}
+
+function cartLoop(cartArray){
+  console.log(cartArray)
+  // cartArray.forEach(filterCart(cartArray))
+  cartArray.forEach(shoppingCartRow)
+}
 //
-// function addToCart(){
-//   console.log("hej")
+// function filterCart(product) {
+//   if (filteredArray.find(product.cartProductName)){
+//     product.quantity += 1
+//   } else {
+//     filteredArray.push(product)
+//   }
+//   return filteredArray
 // }
+
+function shoppingCartRow(cartProduct) {
+  let cartRowCount = cartTable.rows.length;
+  let cartRow = cartTable.insertRow(cartRowCount);
+
+  // for ( i = 0; i < cartArray.length; i++ ) {
+    let cell1 = cartRow.insertCell(0);
+    cell1.innerHTML = cartProduct.cartProductName
+
+    let cell2 = cartRow.insertCell(1)
+    cell2.innerHTML = cartProduct.productQuantity
+
+    let cell3 = cartRow.insertCell(2);
+    cell3.innerHTML = cartProduct.cartPrice + "kr"
+
+
+}
 
 function clearTable() {
   let tableHeaderRowCount = 1;
@@ -81,6 +120,15 @@ function clearTable() {
 
   for (let i = tableHeaderRowCount; i < rowCount; i++) {
     table.deleteRow(tableHeaderRowCount);
+  }
+}
+
+function clearCartTable() {
+  let tableHeaderRowCount = 1;
+  let rowCount = cartTable.rows.length;
+
+  for (let i = tableHeaderRowCount; i < rowCount; i++) {
+    cartTable.deleteRow(tableHeaderRowCount);
   }
 }
 
