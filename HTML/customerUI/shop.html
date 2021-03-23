@@ -26,20 +26,14 @@
 
 <!-- produkter tabel -->
 <div class="container-fluid">
+  <h2 style="text-align: center">Velkommen til KinoXP online butik!</h2>
+  <br>
   <div class ="row">
     <div class="col-sm">
-      <h2>alle Produkter</h2>
 
       <!-- produkt type dropdown -->
       <div class="container-fluid">
-        <select name="productTypeSelect" id="productTypeSelect" onchange="filteredType()">
-          <option hidden selected>Sortér efter produkt type</option>
-          <option value="all">Vis alle typer</option>
-          <option value="merch">Tøj</option>
-          <option value="sweets">Slik</option>
-          <option value="drink">Drikelse</option>
-          <option value="food">Mad</option>
-        </select>
+        <h2 style="float: left">Vælg varer</h2>
       </div>
 
       <table class="table" id="productsDataTable">
@@ -51,19 +45,32 @@
           <th>Tilføj til kurv</th>
         </tr>
       </table>
+      <select name="productTypeSelect" id="productTypeSelect" onchange="filteredType()">
+        <option hidden selected>Sortér efter produkt type</option>
+        <option value="all">Vis alle typer</option>
+        <option value="merch">Tøj</option>
+        <option value="sweets">Slik</option>
+        <option value="drink">Drikelse</option>
+        <option value="food">Mad</option>
+      </select>
     </div>
 
+
     <div class="col-sm">
-      <h2>Din kurv</h2>
+      <h2 style="float: right">Din kurv</h2>
       <table class="table" id="shoppingCartTable">
         <tr>
           <th>Produkt navn</th>
-          <th>Antal</th>
           <th>Pris</th>
         </tr>
       </table>
     </div>
 
+  </div>
+  <div style="float: right">
+    <p >Sum for kurven:</p>
+    <h2 id="cartSum"></h2>
+    <button id="btn btn-primary payCartButton">Videre til betalning</button>
   </div>
 </div>
 
