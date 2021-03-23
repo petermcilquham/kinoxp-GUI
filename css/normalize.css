@@ -4,32 +4,6 @@
    ========================================================================== */
 
 /**
- banner
- */
-.banner{
-  padding: 20px 0;
-  text-align: center;
-  background-color: #999ea4;
-}
-/**
- link styling
- */
-a:link{
-  color: black;
-  text-decoration: none;
-}
-a:visited{
-  color: black;
-}
-a:hover{
-  text-decoration: underline;
-}
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-
-/**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */

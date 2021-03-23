@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/workSchedule";
+const url = "http://localhost:8080/workShifts";
 
 const requestOption = {
   headers: {
@@ -10,14 +10,14 @@ const requestOption = {
 
 fetch(url, requestOption)
   .then(response => response.json())
-  .then(data => gotData(data));
+  .then(data => gotData(data))
 
 function gotData(data){
   data.forEach(addToArray);
 }
 
 function addToArray(data){
-  let title = data.name + data.position + data.startTime.slice(0,5) + data.endTime.slice(0,5)
+  let title = "ID: " + data.workerId + '\n' + "Vagt: " + data.startTime.slice(0,5) + " - " + data.endTime.slice(0,5)
   let temp = new Date(data.date);
   let date = temp.toISOString().slice(0, 10);
 
