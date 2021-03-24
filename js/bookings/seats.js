@@ -1,16 +1,24 @@
-const url = "http://localhost:8080/bookings/seats";
+const inShowID = document.getElementById("showIDInput")
+const seatsBtn = document.getElementById("seatsButton")
+seatsBtn.onclick = function() {
+  console.log(inShowID.value)
+  seatsFunc()
+}
 
-const requestOption = {
-  headers: {
-    "Content-type": 'application/json'
-  },
-  method: 'GET',
-  redirect: 'follow'
-};
+function seatsFunc(){
+  const requestOption = {
+    headers: {
+      "Content-type": 'application/json'
+    },
+    method: 'GET',
+    redirect: 'follow'
+  };
+  const url = `http://localhost:8080/bookings/seats/${inShowID.value}`;
 
-fetch(url, requestOption)
-  .then(response => response.json())
-  .then(data => compare(data));
+  fetch(url, requestOption)
+    .then(response => response.json())
+    .then(data => compare(data));
+}
 
 function compare(data){
   let str
@@ -24,6 +32,7 @@ function compare(data){
         elements[i].classList.add("booked")
         break
       } else {
+        elements[i].classList.remove("booked")
         elements[i].classList.add("free")
       }
     }
@@ -31,7 +40,7 @@ function compare(data){
 
   let freeSeats = document.querySelectorAll('.free');
   for(let i = 0; i < freeSeats.length; i++){
-    freeSeats[i].style.backgroundColor = "green"
+    freeSeats[i].style.backgroundColor = "#2eb82e"
   }
   let takenSeats = document.querySelectorAll('.booked');
   for(let i = 0; i < takenSeats.length; i++){
