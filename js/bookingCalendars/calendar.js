@@ -21,7 +21,7 @@ function addToArray(data){
   let title = data.movieTitle+"\n "+"Start tid: "+data.startTime.slice(0,5)
   let temp = new Date(data.date);
   let date = temp.toISOString().slice(0, 10);
-  let url = "../../HTML/calendars/calendar-show-bookings.html"+`?${id}`
+  let url = "../../HTML/booking-calendars/calendar-show-bookings.html"+`?${id}`
 
   $('#calendar').fullCalendar('renderEvent', {
     id: id,
