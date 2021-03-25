@@ -4,6 +4,44 @@
    ========================================================================== */
 
 /**
+ banner
+ */
+.banner{
+  padding: 20px 0;
+  text-align: center;
+  background-color: #999ea4;
+}
+/**
+ link styling
+ */
+a:link{
+  color: black;
+  text-decoration: none;
+}
+a:visited{
+  color: black;
+}
+a:hover{
+  text-decoration: underline;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+ul.movielist-group li {
+  display: inline-block;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  list-style-type: none;
+  margin: 5px;
+  padding: 2px;
+}
+ul.movielist-group {
+  align-content: center;
+  padding-left: 100px;
+}
+
+/**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
