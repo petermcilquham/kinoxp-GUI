@@ -47,8 +47,7 @@ function addRow(data) {
   cell8.innerHTML = data.stars;
 
   let cell9 = row.insertCell(8);
-  cell9.innerHTML = data.movieImg;
+  cell9.innerHTML = data.showId;
 
-  let cell10 = row.insertCell(9);
-  cell10.innerHTML = data.showId;
+
 }
