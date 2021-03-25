@@ -10,7 +10,6 @@
   <link href="../../css/bootstrap.css" rel="stylesheet"/>
   <link rel="stylesheet" href="../../css/normalize.css">
   <link rel="stylesheet" href="../../css/main.css">
-
 </head>
 
 <body>
@@ -18,7 +17,6 @@
 <div class="container">
   <h1>Admin login</h1>
   <form id="login-form" method="post">
-<!--    adminLoginServiceClass klasse er ikke blevet oprettet endnu-->
 
     <div class="form-group">
       <label for="user">Username</label><br>
@@ -33,6 +31,7 @@
     <button id="login-btn" type="submit" class="btn btn-primary" onclick="return validate()" >Log in</button>
   </form>
 </div>
+
 <script>
   function validate() {
     let user = document.getElementById("user").value;
@@ -47,7 +46,6 @@
       return false;
     }
   }
-
 </script>
 </body>
 </html>

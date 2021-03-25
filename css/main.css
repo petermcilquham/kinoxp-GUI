@@ -46,7 +46,7 @@ a:hover{
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-li:nth-child(odd){
+.odd:nth-child(odd){
   background-color: #dddddd;
 }
 
